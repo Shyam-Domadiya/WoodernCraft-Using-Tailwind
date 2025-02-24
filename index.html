@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- sweet alert js -->
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body class="font-[Poppins] h-screen scroll-smooth bg-gray-100">
+
+
+
+    <!-- main content -->
+    <div id="main">
+        <!-- Menu Bar -->
+        <section id="home"
+            class="bg-fixed container-fluid min-h-screen bg-[url('/img/background.jpg')] bg-center bg-cover">
+            <header class="bg-white">
+                <nav class="flex items-center justify-between px-6 py-4">
+                    <a href="#" class="text-dark text-xl font-semibold">Woodern<span
+                            class="text-teal-600">Craft</span></a>
+                    <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl">&#9776;</button>
+                    <ul id="menu" class="hidden md:flex items-center gap-8">
+                        <li><a class="hover:text-teal-600" href="#home">Home</a></li>
+                        <li><a class="hover:text-teal-600" href="#shop">Shop</a></li>
+                        <li><a class="hover:text-teal-600" href="#new">New Arrival</a></li>
+                        <li><a class="hover:text-teal-600" href="#about">About</a></li>
+                    </ul>
+                    <div id="signupDiv">
+                        <a class="md:block bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700"
+                            onclick="chg()" id="signup" href="#home">Sign In</a>
+                    </div>
+
+                    <div class="hidden" id="logoutDiv">
+                        <a class="hidden md:block bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 "
+                            onclick="logoutBtn()" id="logout" href="#home">Sign out</a>
+                    </div>
+
+                </nav>
+
+                <ul id="mobile-menu"
+                    class="max-h-0 overflow-hidden bg-white shadow-md md:hidden py-0 space-y-4 transition-all duration-300 ease-in-out">
+                    <li><a class="hover:text-teal-600 block py-2 text-center" href="#home">Home</a></li>
+                    <li><a class="hover:text-teal-600 block py-2 text-center" href="#shop">Shop</a></li>
+                    <li><a class="hover:text-teal-500 block py-2 text-center" href="#new">New Arrival</a></li>
+                    <li><a class="hover:text-teal-500 block py-2 text-center" href="#about">About</a></li>
+                    <button id="mobile-signup"
+                        class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 block mx-auto">Sign
+                        In</button>
+                </ul>
+            </header>
+            <div class="container text-dark mt-48 ml-2">
+                <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-semibold"><span
+                        class="text-teal-500">Make</span>Your Comfort <br> Is Our <span
+                        class="text-teal-500">Happiness</span></h1>
+                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa amet excepturi, fuga
+                    labore est corporis.</p>
+                <div class="mt-4">
+                    <a href="#shop" class="bg-teal-600 text-white px-5 py-2 rounded hover:bg-teal-700">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- products -->
+        <section id="shop" class="container-fluid  mx-36">
+            <h1 class="pt-2 text-center text-dark">
+                <span class="text-teal-600 text-base">New Arrival</span><br>
+                <span class="font-semibold text-2xl sm:text-3xl">Shop Now</span>
+            </h1>
+
+            <div class="grid grid-cols-1 gap-6 p-8 sm:grid-cols-2 md:grid-cols-3">
+                <!-- product-1 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class="overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p1.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Gray Sofa</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$77</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-2 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class="overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p2.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Blue Sofa</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$65</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-3 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class="overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p3.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Pink Sofa</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$85</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-4 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p4.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Gray Chair</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$67</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-5 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p5.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Black Chair</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$70</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- product-6 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/p6.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Black & Gray Chair</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">$85</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- best selling products -->
+            <div id="new" class="bg-gray-100 p-6">
+                <h1 class="text-center text-dark">
+                    <span class="text-teal-600 text-base">New Collection</span><br>
+                    <span class="font-semibold text-2xl sm:text-3xl">Best Selling</span>
+                </h1>
+
+                <div class="grid grid-cols-1 gap-6 p-8 sm:grid-cols-2 md:grid-cols-3">
+
+                    <!-- product 1 -->
+                    <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                        <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                            <img src="img/new1.jpg"
+                                class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-2 flex justify-between flex-col w-full">
+                            <div class="flex justify-between ">
+                                <h2 class="text-xl text-center">White Table</h2>
+                                <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                            </div>
+                            <div class="flex justify-between pt-3">
+                                <p class="text-teal-600 text-center text-2xl">65$</p>
+                                <button onclick="redirect()"
+                                    class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                        class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- product 2 -->
+                    <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer" ">
+                        <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/new2.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Simple Chair</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">65$</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- product-3 -->
+                <div class="rounded border rounded-tl-[40px] hover:shadow-2xl  bg-white cursor-pointer">
+                    <div class=" overflow-hidden rounded border rounded-tl-[40px]">
+                        <img src="img/new3.jpg"
+                            class="w-96 h-96 object-cover mx-auto hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-2 flex justify-between flex-col w-full">
+                        <div class="flex justify-between ">
+                            <h2 class="text-xl text-center">Design Chair</h2>
+                            <p class="text-xl text-center text-teal-700">★★★⯪☆</p>
+                        </div>
+                        <div class="flex justify-between pt-3">
+                            <p class="text-teal-600 text-center text-2xl">65$</p>
+                            <button onclick="redirect()"
+                                class="bg-teal-600 text-white hover:bg-teal-700 w-12 h-12 flex items-center justify-center rounded"><i
+                                    class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <img src="img/about.jpg" alt="Sofa"
+                    class="rounded-lg shadow-lg hover:scale-105 transition duration-500">
+            </div>
+            <div>
+                <p class="text-teal-600 font-semibold uppercase">About Us</p>
+                <h2 class="text-3xl font-bold text-gray-900 leading-snug">Furniture is an important part <br> for
+                    Comfort</h2>
+                <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum in
+                    aliquam nemo sit rem modi autem dolor suscipit animi.</p>
+                <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                    excepturi debitis id enim eius blanditiis.</p>
+                <a href="#sign-in"><button
+                        class="bg-teal-600 text-white px-5 py-3 rounded-lg mt-6 hover:bg-teal-700 transition">Learn
+                        More.</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-In Section -->
+    <section id="sign-in" class="bg-fixed w-full py-16 bg-cover bg-center object-cover"
+        style="background-image: url('img/background.jpg');">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-teal-600 text-3xl font-bold">Subscribe to Newsletter</h2>
+            <div class="mt-6 flex justify-center">
+                <input type="email" placeholder="Enter Your Email..." id="emailInput"
+                    class="px-4 py-3 w-80 rounded-l-lg focus:outline-none bg-white text-gray-700">
+                <button id="subBtn"
+                    class="bg-teal-500 text-white px-6 py-3 w-40 rounded-r-lg hover:bg-teal-600 transition">SUBSCRIBE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-10">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-lg font-bold">Woodern<span class="text-teal-500">Craft</span></h2>
+                    <p class="text-gray-600 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+                        neque nam unde molestias.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-800 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-800 text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-800 text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Services</h3>
+                    <ul class="text-gray-600 mt-2 space-y-2">
+                        <li><a href="#shop" class="hover:text-teal-500">Product</a></li>
+                        <li><a href="#about" class="hover:text-teal-500">Help & Support</a></li>
+                        <li><a href="#shop" class="hover:text-teal-500">Pricing</a></li>
+                        <li><a href="#" class="hover:text-teal-500">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold"><a href="#shop">Products</a></h3>
+                    <ul class="text-gray-600 mt-2 space-y-2">
+                        <li><a href="#shop" class="hover:text-teal-500">Sofa</a></li>
+                        <li><a href="#shop" class="hover:text-teal-500">Chair's</a></li>
+                        <li><a href="#shop" class="hover:text-teal-500">Living Room</a></li>
+                        <li><a href="#sign-in" class="hover:text-teal-500">Office</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact</h3>
+                    <p class="text-gray-600 mt-2">Ahemdabad, Gujarat, India</p>
+                    <p class="text-gray-600">+91 1234567890</p>
+                    <p class="text-gray-600">wooderncraft@gmail.com</p>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-300">
+            <div class="text-center text-gray-600 text-sm">
+                © WoodernCraft All rights Reserved.
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
